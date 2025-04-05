@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Informasi Pembayaran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-align: center;
+      background: url('https://img12.pixhost.to/images/1448/584031107_rizzhosting.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.5) blur(2px);
+    }
+
+    .container {
+      background-color: rgba(15, 14, 23, 0.8);
+      padding: 30px 15px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 25px #9d00ff80;
+    }
+
+    img {
+      max-width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #9d00ff;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #9d00ff;
+      text-shadow: 0 0 10px #9d00ff;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #9d00ff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 10px #9d00ff;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #c026d3;
+      box-shadow: 0 0 20px #c026d3;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #fff;
+      text-shadow: 0 0 10px #a855f7;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: rgba(31, 27, 46, 0.8);
+      color: #b0a9c9;
+      font-size: 14px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .credit {
+      font-size: 12px;
+      margin-top: 5px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://files.catbox.moe/smt9mc.jpg" alt="Banner" />
+
+    <h1>Informasi Pembayaran</h1>
+
+    <p>Halo kak, ingin bertranksaksi dengan cepat? bisa langsung transfer ke pembayaran dibawah ini, lalu screenshot dan kirim ke contact owner, dengan caption produk yang ingin kamu beli.<br><br>
+      Sebelum membeli produk kamu bisa membaca keterangan produk dan jasa kami di bawah:</p>
+
+    <a class="btn" href="https://informasi-joocloud.vercel.app/" target="_blank">Spesifikasi Produk Kami</a>
+
+    <h2 class="section-title">Payment</h2>
+    <img src="https://files.catbox.moe/bm438o.jpg" alt="QRIS">
+
+    <div>
+      <button class="btn" onclick="copyToClipboard('083822438936')">Salin Dana</button>
+      <button class="btn" onclick="copyToClipboard('083822438936')">Salin GoPay</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Terima kasih telah mempercayai layanan kami!</p>
+    <div class="credit">© 2025 by Joo Payment Center. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function copyToClipboard(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert('Nomor berhasil disalin: ' + text);
+        }).catch(err => {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const input = document.createElement('input');
+      document.body.appendChild(input);
+      input.setAttribute('value', text);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      alert('Nomor berhasil disalin: ' + text);
+    }
+  </script>
+
+</body>
+</html>
