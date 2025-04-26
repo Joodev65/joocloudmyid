@@ -3,138 +3,446 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Informasi Pembayaran</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>JooCloudID Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+    }
+    header {
+      background: #111;
       text-align: center;
-      background: url('https://img12.pixhost.to/images/1448/584031107_rizzhosting.jpg') no-repeat center center fixed;
-      background-size: cover;
-      backdrop-filter: brightness(0.5) blur(2px);
+      padding: 20px 10px;
+      border-bottom: 2px solid #00ffc3;
     }
-
-    .container {
-      background-color: rgba(15, 14, 23, 0.8);
-      padding: 30px 15px;
-      max-width: 600px;
-      margin: auto;
-      border-radius: 20px;
-      margin-top: 40px;
-      box-shadow: 0 0 25px #9d00ff80;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
-
-    img {
-      max-width: 200px;
+    .logo-container img {
+      width: 70px;
+      height: 70px;
       border-radius: 12px;
-      box-shadow: 0 0 15px #9d00ff;
+      border: 2px solid #00ffc3;
+      box-shadow: 0 0 10px #00ffc3;
     }
-
-    h1 {
-      font-size: 28px;
-      color: #9d00ff;
-      text-shadow: 0 0 10px #9d00ff;
+    .logo-container h1 {
+      font-size: 30px;
+      color: #00ffc3;
+    }
+    header p {
+      color: #ccc;
+      margin-top: 10px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #00ffc3;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .scrolling-text {
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 20px;
+      color: #fff;
+      padding: 10px 0;
+      animation: scrollText 15s linear infinite;
+      background: #1a1a1a;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #00ffc3;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    .product-list {
       margin-top: 20px;
     }
-
-    p {
-      font-size: 15px;
-      margin: 20px 0;
-      line-height: 1.6;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background-color: #9d00ff;
-      color: #fff;
-      border: none;
+    .product-item {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      padding: 15px 20px;
+      margin-bottom: 10px;
       border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 10px #9d00ff;
       transition: 0.3s;
     }
-
+    .product-item:hover {
+      border-color: #00ffc3;
+      background: #151515;
+    }
+    .product-item span {
+      color: #00ffc3;
+      float: right;
+      font-weight: bold;
+    }
+    .payment-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .payment-section img {
+      width: 220px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 2px solid #00ffc3;
+      box-shadow: 0 0 10px #00ffc3;
+    }
+    .payment-btn {
+      background-color: #00ffc3;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .payment-btn:hover {
+      background-color: #00b79f;
+    }
+    .contact {
+      margin-top: 40px;
+    }
+    .contact a {
+      display: block;
+      color: #00ffc3;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #00ffc3;
+      color: #000;
+      padding: 12px 24px;
+      margin-top: 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     .btn:hover {
-      background-color: #c026d3;
-      box-shadow: 0 0 20px #c026d3;
+      background-color: #00b79f;
     }
-
-    .section-title {
-      font-size: 24px;
-      margin-top: 40px;
-      color: #fff;
-      text-shadow: 0 0 10px #a855f7;
-    }
-
     footer {
-      margin-top: 40px;
+      text-align: center;
       padding: 20px;
-      background-color: rgba(31, 27, 46, 0.8);
-      color: #b0a9c9;
+      background: #111;
       font-size: 14px;
-      border-radius: 0 0 20px 20px;
-    }
-
-    .credit {
-      font-size: 12px;
-      margin-top: 5px;
-      color: #aaa;
+      color: #777;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="https://files.catbox.moe/smt9mc.jpg" alt="Banner" />
-
-    <h1>Informasi Pembayaran</h1>
-
-    <p>Halo kak, ingin bertranksaksi dengan cepat? bisa langsung transfer ke pembayaran dibawah ini, lalu screenshot dan kirim ke contact owner, dengan caption produk yang ingin kamu beli.<br><br>
-      Sebelum membeli produk kamu bisa membaca keterangan produk dan jasa kami di bawah:</p>
-
-    <a class="btn" href="https://informasi-joocloud.vercel.app/" target="_blank">Spesifikasi Produk Kami</a>
-
-    <h2 class="section-title">Payment</h2>
-    <img src="https://files.catbox.moe/bm438o.jpg" alt="QRIS">
-
-    <div>
-      <button class="btn" onclick="copyToClipboard('083822438936')">Salin Dana</button>
-      <button class="btn" onclick="copyToClipboard('083822438936')">Salin GoPay</button>
+  <header>
+    <div class="logo-container">
+      <img src="https://img1.pixhost.to/images/5304/592487561_joocloud.jpg" alt="Logo" />
+      <h1>JooCloudID Marketplace</h1>
     </div>
+    <p>Jasa Digital | Panel | Bot | VPS | Nomor Virtual</p>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Produk</a>
+      <a href="#">Kontak</a>
+      <a href="#">Testimoni</a>
+    </nav>
+  </header>
+
+  <div class="scrolling-text">Tranksaksi Selalu Aman 100%!</div>
+
+  <div class="section">
+    <h2>Spesifikasi Produk</h2>
+    <div class="product-list">
+      <div class="product-item">✪ Panel Pterodactyl Unlimited <span>1.000</span></div>
+      <div class="product-item">✪ Reseller Panel <span>3.000</span></div>
+      <div class="product-item">✪ Admin Panel <span>5.000</span></div>
+      <div class="product-item">✪ Owner Panel <span>6.000</span></div>
+      <div class="product-item">✪ Partner Panel <span>10.000</span></div>
+      <div class="product-item">✪ VPS (R16 C4) <span>40.000</span></div>
+      <div class="product-item">✪ Nomor Virtual (Nokos) <span>Custom</span></div>
+      <div class="product-item">✪ Jasa Pembuatan Script Bot <span>Custom</span></div>
+      <div class="product-item">✪ Jasa Fix Script <span>Custom</span></div>
+      <div class="product-item">✪ Selling Script JooCloudID V4 <span>20.000</span></div>
+      <div class="product-item">✪ Jasa Install Panel <span>8.000</span></div>
+      <div class="product-item">✪ Jasa Install Thema <span>3.000</span></div>
+      <div class="product-item">✪ Jasa Hackback Panel <span>5.000</span></div>
+      <div class="product-item">✪ Jasa Ubah PW VPS <span>1.000</span></div>
+    </div>
+
+    <div class="payment-section">
+      <h2>Metode Pembayaran</h2>
+      <img src="https://img1.pixhost.to/images/5304/592488198_joocloud.jpg" alt="QRIS" />
+      <div>
+        <button class="payment-btn" onclick="copyText('083822438936')">Dana</button>
+        <button class="payment-btn" onclick="copyText('6283196543913')">GoPay</button>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h2>Contact Person</h2>
+      <a href="https://wa.me/6283196543913" target="_blank">WhatsApp (Chat Langsung)</a>
+      <a href="https://whatsapp.com/channel/0029VbA8EL0DjiOguK9AA30X" target="_blank">Testimoni</a>
+      <a href="https://whatsapp.com/channel/0029Vb5dKXYFSAt6LMj6CR1V" target="_blank">Info & Update</a>
+      <a href="https://nlink.at/joocloud" target="_blank">My Website</a>
+    </div>
+
+    <a class="btn" href="https://wa.me/qr/N2SEYDETMON2J1" target="_blank">Pesan Sekarang</a>
   </div>
 
   <footer>
-    <p>Terima kasih telah mempercayai layanan kami!</p>
-    <div class="credit">© 2025 by Joo Payment Center. All rights reserved.</div>
+    &copy; 2025 JooCloudID. All Rights Reserved.
   </footer>
 
   <script>
-    function copyToClipboard(text) {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(() => {
-          alert('Nomor berhasil disalin: ' + text);
-        }).catch(err => {
-          fallbackCopy(text);
-        });
-      } else {
-        fallbackCopy(text);
-      }
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Nomor ${text} telah disalin!`);
+      });
     }
+  </script>
 
-    function fallbackCopy(text) {
-      const input = document.createElement('input');
-      document.body.appendChild(input);
-      input.setAttribute('value', text);
-      input.select();
-      document.execCommand('copy');
-      document.body.removeChild(input);
-      alert('Nomor berhasil disalin: ' + text);
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JooCloudID Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+    }
+    header {
+      background: #111;
+      text-align: center;
+      padding: 20px 10px;
+      border-bottom: 2px solid #00ffc3;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .logo-container img {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      border: 2px solid #00ffc3;
+      box-shadow: 0 0 10px #00ffc3;
+    }
+    .logo-container h1 {
+      font-size: 30px;
+      color: #00ffc3;
+    }
+    header p {
+      color: #ccc;
+      margin-top: 10px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #00ffc3;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .scrolling-text {
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 20px;
+      color: #fff;
+      padding: 10px 0;
+      animation: scrollText 15s linear infinite;
+      background: #1a1a1a;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #00ffc3;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    .product-list {
+      margin-top: 20px;
+    }
+    .product-item {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .product-item:hover {
+      border-color: #00ffc3;
+      background: #151515;
+    }
+    .product-item span {
+      color: #00ffc3;
+      float: right;
+      font-weight: bold;
+    }
+    .payment-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .payment-section img {
+      width: 220px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 2px solid #00ffc3;
+      box-shadow: 0 0 10px #00ffc3;
+    }
+    .payment-btn {
+      background-color: #00ffc3;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .payment-btn:hover {
+      background-color: #00b79f;
+    }
+    .contact {
+      margin-top: 40px;
+    }
+    .contact a {
+      display: block;
+      color: #00ffc3;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #00ffc3;
+      color: #000;
+      padding: 12px 24px;
+      margin-top: 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #00b79f;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="https://img1.pixhost.to/images/5304/592487561_joocloud.jpg" alt="Logo" />
+      <h1>JooCloudID Marketplace</h1>
+    </div>
+    <p>Jasa Digital | Panel | Bot | VPS | Nomor Virtual</p>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Produk</a>
+      <a href="#">Kontak</a>
+      <a href="#">Testimoni</a>
+    </nav>
+  </header>
+
+  <div class="scrolling-text">Tranksaksi Selalu Aman 100%!</div>
+
+  <div class="section">
+    <h2>Spesifikasi Produk</h2>
+    <div class="product-list">
+      <div class="product-item">✪ Panel Pterodactyl Unlimited <span>1.000</span></div>
+      <div class="product-item">✪ Reseller Panel <span>3.000</span></div>
+      <div class="product-item">✪ Admin Panel <span>5.000</span></div>
+      <div class="product-item">✪ Owner Panel <span>6.000</span></div>
+      <div class="product-item">✪ Partner Panel <span>10.000</span></div>
+      <div class="product-item">✪ VPS (R16 C4) <span>40.000</span></div>
+      <div class="product-item">✪ Nomor Virtual (Nokos) <span>Custom</span></div>
+      <div class="product-item">✪ Jasa Pembuatan Script Bot <span>Custom</span></div>
+      <div class="product-item">✪ Jasa Fix Script <span>Custom</span></div>
+      <div class="product-item">✪ Selling Script JooCloudID V4 <span>20.000</span></div>
+      <div class="product-item">✪ Jasa Install Panel <span>8.000</span></div>
+      <div class="product-item">✪ Jasa Install Thema <span>3.000</span></div>
+      <div class="product-item">✪ Jasa Hackback Panel <span>5.000</span></div>
+      <div class="product-item">✪ Jasa Ubah PW VPS <span>1.000</span></div>
+    </div>
+
+    <div class="payment-section">
+      <h2>Metode Pembayaran</h2>
+      <img src="https://img1.pixhost.to/images/5304/592488198_joocloud.jpg" alt="QRIS" />
+      <div>
+        <button class="payment-btn" onclick="copyText('083822438936')">Dana</button>
+        <button class="payment-btn" onclick="copyText('6283196543913')">GoPay</button>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h2>Contact Person</h2>
+      <a href="https://wa.me/6283196543913" target="_blank">WhatsApp (Chat Langsung)</a>
+      <a href="https://whatsapp.com/channel/0029VbA8EL0DjiOguK9AA30X" target="_blank">Testimoni</a>
+      <a href="https://whatsapp.com/channel/0029Vb5dKXYFSAt6LMj6CR1V" target="_blank">Info & Update</a>
+      <a href="https://nlink.at/joocloud" target="_blank">My Website</a>
+    </div>
+
+    <a class="btn" href="https://wa.me/qr/N2SEYDETMON2J1" target="_blank">Pesan Sekarang</a>
+  </div>
+
+  <footer>
+    &copy; 2025 JooCloudID. All Rights Reserved.
+  </footer>
+
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Nomor ${text} telah disalin!`);
+      });
     }
   </script>
 
