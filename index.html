@@ -232,23 +232,162 @@
   <div class="scrolling-text">Transaksi Selalu Aman 100%!</div>
 
   <div class="section">
-    <h2>Spesifikasi Produk</h2>
-    <div class="product-list">
-      <div class="product-item">✪ Panel Pterodactyl Unlimited <span>1.000</span></div>
-      <div class="product-item">✪ Reseller Panel <span>3.000</span></div>
-      <div class="product-item">✪ Admin Panel <span>5.000</span></div>
-      <div class="product-item">✪ Owner Panel <span>6.000</span></div>
-      <div class="product-item">✪ Partner Panel <span>10.000</span></div>
-      <div class="product-item">✪ VPS (R16 C4) <span>40.000</span></div>
-      <div class="product-item">✪ Nomor Virtual (Nokos) <span>Custom</span></div>
-      <div class="product-item">✪ Jasa Pembuatan Script Bot <span>Custom</span></div>
-      <div class="product-item">✪ Jasa Fix Script <span>Custom</span></div>
-      <div class="product-item">✪ Selling Script JooCloudID V4 <span>20.000</span></div>
-      <div class="product-item">✪ Jasa Install Panel <span>8.000</span></div>
-      <div class="product-item">✪ Jasa Install Thema <span>3.000</span></div>
-      <div class="product-item">✪ Jasa Hackback Panel <span>5.000</span></div>
-      <div class="product-item">✪ Jasa Ubah PW VPS <span>1.000</span></div>
+  <h2>Spesifikasi Produk</h2>
+  <div class="product-list">
+    <div class="product-item" onclick="toggleSpecs('panel-pterodactyl')">✪ Panel Pterodactyl Unlimited <span>5.000</span>
+      <div class="product-specs" id="panel-pterodactyl" style="display: none;">
+        <ul>
+          <li>Ram Unlimited</li>
+          <li>Anti Delay Server</li>
+          <li>Tampilan Futuristik</li>
+          <li>Server On 24/7</li>
+        </ul>
+      </div>
     </div>
+    
+    <div class="product-item" onclick="toggleSpecs('reseller-panel')">✪ Reseller Panel <span>6.000</span>
+      <div class="product-specs" id="reseller-panel" style="display: none;">
+        <ul>
+          <li>Buat Panel Sepuasnya</li>
+          <li>Jual Panel Kualitas Tinggi</li>
+          <li>Bot Resseler On 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('admin-panel')">✪ Admin Panel <span>8.000</span>
+      <div class="product-specs" id="admin-panel" style="display: none;">
+        <ul>
+          <li>Full Akses Sistem Setting</li>
+          <li>Anti Delete Your Panel</li>
+          <li>Cocok Open Resseler</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('owner-panel')">✪ Owner Panel <span>10.000</span>
+      <div class="product-specs" id="owner-panel" style="display: none;">
+        <ul>
+          <li>Complete Ownership Features</li>
+          <li>Advanced Security Options</li>
+          <li>Manage Admin and Reseller Accounts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('partner-panel')">✪ Partner Panel <span>15.000</span>
+      <div class="product-specs" id="partner-panel" style="display: none;">
+        <ul>
+          <li>Exclusive Partnership Benefits</li>
+          <li>Revenue Sharing Options</li>
+          <li>Personalized Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('vps')">✪ VPS (R16 C4) <span>55.000</span>
+      <div class="product-specs" id="vps" style="display: none;">
+        <ul>
+          <li>16 GB RAM</li>
+          <li>4 Cores CPU</li>
+          <li>High Performance SSD Storage</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('nokos')">✪ Nomor Virtual (Nokos) <span>Custom</span>
+      <div class="product-specs" id="nokos" style="display: none;">
+        <ul>
+          <li>Customizable Number</li>
+          <li>Perfect for Verification</li>
+          <li>Multiple Providers Supported</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-script-bot')">✪ Jasa Pembuatan Script Bot <span>Custom</span>
+      <div class="product-specs" id="jasa-script-bot" style="display: none;">
+        <ul>
+          <li>Custom Bot Script</li>
+          <li>Full Integration with WhatsApp</li>
+          <li>Automation & Custom Features</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-fix-script')">✪ Jasa Fix Script <span>Custom</span>
+      <div class="product-specs" id="jasa-fix-script" style="display: none;">
+        <ul>
+          <li>Debugging and Bug Fixing</li>
+          <li>Performance Optimization</li>
+          <li>Custom Solution for Your Script</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('selling-script-joo')">✪ Selling Script JooCloudID V5 <span>20.000</span>
+      <div class="product-specs" id="selling-script-joo" style="display: none;">
+        <ul>
+          <li>Script Bot Whatsapp</li>
+          <li>Auto Reply</li>
+          <li>Support All Panel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-install-panel')">✪ Jasa Install Panel <span>8.000</span>
+      <div class="product-specs" id="jasa-install-panel" style="display: none;">
+        <ul>
+          <li>Full Setup & Installation</li>
+          <li>Easy Configuration</li>
+          <li>Comprehensive Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-install-thema')">✪ Jasa Install Thema <span>3.000</span>
+      <div class="product-specs" id="jasa-install-thema" style="display: none;">
+        <ul>
+          <li>Custom Themes for Panels</li>
+          <li>Beautiful and User-Friendly Designs</li>
+          <li>Easy to Customize</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-hackback')">✪ Jasa Hackback Panel <span>5.000</span>
+      <div class="product-specs" id="jasa-hackback" style="display: none;">
+        <ul>
+          <li>Security Panel Recovery</li>
+          <li>Hackback Strategies</li>
+          <li>Full Protection Services</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-ubah-pw-vps')">✪ Jasa Ubah PW VPS <span>1.000</span>
+      <div class="product-specs" id="jasa-ubah-pw-vps" style="display: none;">
+        <ul>
+          <li>Password Recovery for VPS</li>
+          <li>Secure and Confidential</li>
+          <li>Fast Process</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleSpecs(productId) {
+    const specs = document.getElementById(productId);
+    const isVisible = specs.style.display === 'block';
+
+    // Toggle the visibility of the specs
+    specs.style.display = isVisible ? 'none' : 'block';
+  }
+</script>
+
+
 
     <div class="payment-section">
       <h2>Metode Pembayaran</h2>
