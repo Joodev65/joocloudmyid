@@ -5,250 +5,305 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JooCloudID Marketplace</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-      position: relative;
-      overflow-x: hidden;
-    }
-    video#background-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-      opacity: 0.2;
-    }
-    header {
-      text-align: center;
-      padding: 30px 20px;
-      border-bottom: 2px solid #fff;
-      background: transparent;
-    }
-    header h1 {
-      font-size: 32px;
-      letter-spacing: 1px;
-      color: #fff;
-    }
-    header p {
-      color: #fff;
-      margin-top: 8px;
-    }
-    header img {
-      width: 60px;
-      height: auto;
-      margin-left: 10px;
-      vertical-align: middle;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      padding: 5px;
-    }
-    .scrolling-text {
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      font-size: 20px;
-      color: #fff;
-      padding: 10px 0;
-      animation: scrollText 15s linear infinite;
-    }
-    @keyframes scrollText {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .section h2 {
-      color: #fff;
-      border-bottom: 1px solid #fff;
-      padding-bottom: 10px;
-      margin-top: 40px;
-    }
-    .product-list, .contact {
-      margin-top: 20px;
-    }
-    .product-item {
-      background: transparent;
-      border: 1px solid #fff;
-      padding: 15px 20px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-    .product-item span {
-      color: #fff;
-      float: right;
-      font-weight: bold;
-    }
+<style>
+  /* General Styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+  }
 
-    .payment-section {
-      margin-top: 30px;
-      text-align: center;
-    }
-    .payment-section img {
-      width: 200px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      border: 2px solid #fff;
-    }
-    .payment-btn {
-      background-color: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-      margin-right: 10px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .payment-btn:hover {
-      background-color: #fff;
-      color: #000;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .skill-btn {
-      background: transparent;
-      border: 1px solid #fff;
-      border-radius: 8px;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: #fff;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-    }
-    .skill-btn:hover {
-      background: #fff;
-      color: #000;
-    }
-    .skill-btn img {
-      width: 18px;
-      height: 18px;
-    }
-    .audio-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .play-btn {
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      font-size: 20px;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s, color 0.3s, transform 0.2s;
-    }
-    .play-btn:hover {
-      background: #fff;
-      color: #000;
-      transform: scale(1.05);
-    }
-    .play-btn:focus {
-      outline: none;
-    }
-    /* Animasi kedip */
-.blinking-text {
-  font-size: 20px;
+  /* Background Video */
+  video#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.2;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+  }
+  header h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  header p {
+    color: #fff;
+    margin-top: 8px;
+  }
+  header img {
+    width: 60px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 5px;
+  }
+
+  /* Scrolling Text */
+  .scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 0;
+    animation: scrollText 15s linear infinite;
+  }
+  @keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Sections */
+  .section {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .section h2 {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+  .product-list, .contact {
+    margin-top: 20px;
+  }
+
+  /* Product Items */
+  .product-item {
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .product-item span {
+    color: #fff;
+    float: right;
+    font-weight: bold;
+  }
+
+  /* Payment Section */
+  .payment-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .payment-section img {
+    width: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #fff;
+  }
+  .payment-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .payment-btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* Skills Section */
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .skill-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  .skill-btn:hover {
+    background: #fff;
+    color: #000;
+  }
+  .skill-btn img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Audio Section */
+  .audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .play-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+  }
+  .play-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+  }
+  .play-btn:focus {
+    outline: none;
+  }
+
+  /* Blinking Text Animation */
+  .blinking-text {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    animation: blinkText 1s step-start infinite;
+  }
+  @keyframes blinkText {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Social Media Section */
+  .sosial-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .social-btn {
+    background: transparent;
+    padding: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .social-btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Icon jadi putih */
+  }
+  .social-btn:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+  }
+  .social-btn:hover img {
+    filter: none; /* icon normal lagi saat hover */
+  }
+  .social-btn:active {
+    transform: scale(0.95);
+  }
+
+/* Section Title Styling */
+/* Section Title Styling */
+.section-title {
+  text-align: left;  /* Align the title to the left */
   color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  animation: blinkText 1s step-start infinite;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  width: 100%;  /* Make the underline span the full width */
 }
 
-@keyframes blinkText {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+
+/* Button Styling */
+.contact-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 8px 16px;  /* Adjusted padding for better spacing */
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Increased gap for better spacing between text and icon */
+  font-size: 16px;  /* Increased font size for readability */
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
-    .sosial-media {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .social-btn {
-      background: transparent;
-      padding: 12px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .social-btn img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1); /* Icon jadi putih */
-    }
-    .social-btn:hover {
-      background-color: #fff;
-      transform: scale(1.1);
-    }
-    .social-btn:hover img {
-      filter: none; /* icon normal lagi saat hover */
-    }
-    .social-btn:active {
-      transform: scale(0.95);
-    }
-    .contact a {
-      display: block;
-      color: #fff;
-      margin-bottom: 10px;
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: transparent;
-      font-size: 14px;
-      color: #fff;
-      margin-top: 40px;
-      border-top: 2px solid #fff;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, color 0.3s;
-    }
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
-  </style>
-</head>
-<body>
+.contact-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.contact-btn:active {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 40px;
+    border-top: 2px solid #fff;
+  }
+
+  /* General Button Styles */
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn:hover {
+    background: #fff;
+    color: #000;
+  }
+</style>
+
 
 <!-- Background video -->
 <video id="background-video" autoplay loop muted playsinline>
@@ -480,17 +535,14 @@
   </div>
 </div>
 
-    <div class="contact">
-      <h2>Contact Person</h2>
-      <a href="https://wa.me/6283196543913" target="_blank">WhatsApp (Chat Langsung)</a>
-      <a href="https://whatsapp.com/channel/0029VbA8EL0DjiOguK9AA30X" target="_blank">Testimoni</a>
-      <a href="https://whatsapp.com/channel/0029Vb5dKXYFSAt6LMj6CR1V" target="_blank">Info & Update</a>
-      <a href="https://nlink.at/joocloud" target="_blank">My Website</a>
-    </div>
+<div class="contact">
+  <h2 class="section-title">Contact Person</h2>
+  <a href="https://wa.me/6283196543913" target="_blank" class="contact-btn">WhatsApp</a>
+  <a href="https://whatsapp.com/channel/0029VbA8EL0DjiOguK9AA30X" target="_blank" class="contact-btn">Testimoni</a>
+  <a href="https://whatsapp.com/channel/0029Vb5dKXYFSAt6LMj6CR1V" target="_blank" class="contact-btn">Info & Update</a>
+  <a href="https://chat.whatsapp.com/D8snaCAdqnnEc9UKPNVGFT" target="_blank" class="contact-btn">Marketplace</a>
+</div>
 
-    <a class="btn" href="https://wa.me/qr/N2SEYDETMON2J1" target="_blank">Pesan Sekarang</a>
-
-  </div>
 
   <footer>
     &copy; 2025 JooCloudID. All Rights Reserved.
