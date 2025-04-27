@@ -56,6 +56,33 @@
     border-radius: 12px;
     padding: 5px;
   }
+/* Fade-In Effect */
+.fade-in-title {
+  font-size: 32px;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
 
   /* Scrolling Text */
   .scrolling-text {
@@ -311,7 +338,7 @@
 </video>
 
   <header>
-    <h1>JooCloudID Marketplace</h1>
+<h2 class="fade-in-title">JooCloudID Marketplace</h2>
     <img src="https://img1.pixhost.to/images/5304/592487561_joocloud.jpg" alt="Logo">
     <p>Jasa Digital | Panel | Bot | VPS | Nomor Virtual</p>
   </header>
