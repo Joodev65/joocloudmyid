@@ -6,26 +6,40 @@
   <title>JooCloudID Marketplace</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #0d0d0d;
-      color: #ffffff;
+      background-color: #000;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+    video#background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.2;
     }
     header {
-      background: #111;
       text-align: center;
       padding: 30px 20px;
-      border-bottom: 2px solid #00ffc3;
+      border-bottom: 2px solid #fff;
+      background: transparent;
     }
     header h1 {
       font-size: 32px;
       letter-spacing: 1px;
-      color: #00ffc3;
-      display: inline-block;
+      color: #fff;
     }
     header p {
-      color: #ccc;
+      color: #fff;
       margin-top: 8px;
     }
     header img {
@@ -33,7 +47,7 @@
       height: auto;
       margin-left: 10px;
       vertical-align: middle;
-      border: 3px solid #00ffc3;
+      border: 2px solid #fff;
       border-radius: 12px;
       padding: 5px;
     }
@@ -56,8 +70,8 @@
       margin: auto;
     }
     .section h2 {
-      color: #00ffc3;
-      border-bottom: 1px solid #333;
+      color: #fff;
+      border-bottom: 1px solid #fff;
       padding-bottom: 10px;
       margin-top: 40px;
     }
@@ -65,17 +79,18 @@
       margin-top: 20px;
     }
     .product-item {
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
+      background: transparent;
+      border: 1px solid #fff;
       padding: 15px 20px;
       margin-bottom: 10px;
       border-radius: 10px;
     }
     .product-item span {
-      color: #00ffc3;
+      color: #fff;
       float: right;
       font-weight: bold;
     }
+
     .payment-section {
       margin-top: 30px;
       text-align: center;
@@ -84,18 +99,22 @@
       width: 200px;
       border-radius: 8px;
       margin-bottom: 10px;
+      border: 2px solid #fff;
     }
     .payment-btn {
-      background-color: #00ffc3;
-      color: #000;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
       padding: 10px 20px;
       border-radius: 8px;
-      margin-top: 10px;
       cursor: pointer;
+      margin-top: 10px;
       margin-right: 10px;
+      transition: background 0.3s, color 0.3s;
     }
     .payment-btn:hover {
-      background-color: #00b79f;
+      background-color: #fff;
+      color: #000;
     }
     .skills {
       display: flex;
@@ -104,53 +123,63 @@
       margin-top: 15px;
     }
     .skill-btn {
-      background: #1a1a1a;
-      border: 1px solid #00ffc3;
+      background: transparent;
+      border: 1px solid #fff;
       border-radius: 8px;
       padding: 8px 12px;
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 14px;
-      color: #00ffc3;
+      color: #fff;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
     .skill-btn:hover {
-      background: #00ffc3;
-      color: #0d0d0d;
+      background: #fff;
+      color: #000;
     }
     .skill-btn img {
       width: 18px;
       height: 18px;
     }
     .audio-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.play-btn {
-  background-color: #1a1a1a;
-  border: 2px solid #00ffc3;
-  color: #00ffc3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .play-btn {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+    .play-btn:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.05);
+    }
+    .play-btn:focus {
+      outline: none;
+    }
+    /* Animasi kedip */
+.blinking-text {
   font-size: 20px;
-  padding: 10px 20px; /* Membuat tombol lebih panjang */
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s, transform 0.2s;
-  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  animation: blinkText 1s step-start infinite;
 }
 
-.play-btn:hover {
-  background-color: #00ffc3;
-  color: #1a1a1a;
-  transform: scale(1.05); /* Tombol sedikit membesar saat hover */
-}
-
-.play-btn:focus {
-  outline: none;
+@keyframes blinkText {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
     .sosial-media {
@@ -159,61 +188,72 @@
       gap: 15px;
       margin-top: 30px;
     }
-
-    .sosial-media .social-btn {
-     background-color: #1a1a1a;
-     padding: 12px;
-     border-radius: 50%;
-     border: 2px solid #00ffc3;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 50px;
-     height: 50px;
-     transition: background-color 0.3s, transform 0.3s;
+    .social-btn {
+      background: transparent;
+      padding: 12px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      transition: background 0.3s, transform 0.3s;
     }
-
-    .sosial-media .social-btn img {
-     width: 24px;
-     height: 24px;
+    .social-btn img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1); /* Icon jadi putih */
     }
-
-    .sosial-media .social-btn:hover {
-    background-color: #00ffc3;
-    transform: scale(1.1);
+    .social-btn:hover {
+      background-color: #fff;
+      transform: scale(1.1);
     }
-
-    .sosial-media .social-btn:active {
-     transform: scale(0.95);
+    .social-btn:hover img {
+      filter: none; /* icon normal lagi saat hover */
     }
-
+    .social-btn:active {
+      transform: scale(0.95);
+    }
     .contact a {
       display: block;
-      color: #00ffc3;
+      color: #fff;
       margin-bottom: 10px;
-      text-decoration: none;
+      text-decoration: underline;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background: #111;
+      background: transparent;
       font-size: 14px;
-      color: #777;
+      color: #fff;
       margin-top: 40px;
+      border-top: 2px solid #fff;
     }
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 24px;
-      background: #00ffc3;
-      color: #0d0d0d;
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn:hover {
+      background: #fff;
+      color: #000;
     }
   </style>
 </head>
 <body>
+
+<!-- Background video -->
+<video id="background-video" autoplay loop muted playsinline>
+  <source src="https://files.catbox.moe/ve0xo6.mp4" type="video/mp4">
+</video>
 
   <header>
     <h1>JooCloudID Marketplace</h1>
@@ -229,7 +269,8 @@
   </audio>
 </div>
 
-  <div class="scrolling-text">Transaksi Selalu Aman 100%!</div>
+  <div class="blinking-text">Transaksi Selalu Aman 100%!</div>
+
 
   <div class="section">
   <h2>Spesifikasi Produk</h2>
