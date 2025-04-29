@@ -1,110 +1,587 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Hacked by Joozx Developer</title>
-  <style>
-    body {
-      background: black;
-      color: red;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JooCloudID Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* General Styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+  }
 
-    .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      animation: fadeIn 5s forwards;
-    }
+  /* Background Video */
+  video#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.2;
+  }
 
-    h1 {
-      font-size: 3em;
-      animation: flicker 1s infinite alternate;
-      text-shadow: 0 0 20px red, 0 0 40px red;
-    }
+  /* Header */
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+  }
+  header h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  header p {
+    color: #fff;
+    margin-top: 8px;
+  }
+  header img {
+    width: 60px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 5px;
+  }
+/* Fade-In Effect */
+.fade-in-title {
+  font-size: 32px;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
 
-    .subtext {
-      font-size: 1.2em;
-      color: white;
-      animation: glow 2s ease-in-out infinite alternate;
-      margin-top: 20px;
-    }
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 
-    img.hack-logo {
-      width: 250px;
-      margin-top: 30px;
-      animation: rotateGlow 6s linear infinite;
-      border-radius: 10px;
-    }
+/* Blinking cursor effect */
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
 
-    audio {
-      display: none;
-    }
+  /* Scrolling Text */
+  .scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 0;
+    animation: scrollText 15s linear infinite;
+  }
+  @keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+  /* Sections */
+  .section {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .section h2 {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+  .product-list, .contact {
+    margin-top: 20px;
+  }
 
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.3; }
-      100% { opacity: 1; }
-    }
+  /* Product Items */
+  .product-item {
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .product-item span {
+    color: #fff;
+    float: right;
+    font-weight: bold;
+  }
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px white;
-      }
-      to {
-        text-shadow: 0 0 20px red, 0 0 30px red;
-      }
-    }
+  /* Payment Section */
+  .payment-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .payment-section img {
+    width: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #fff;
+  }
+  .payment-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .payment-btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
 
-    @keyframes rotateGlow {
-      0% {
-        filter: drop-shadow(0 0 0 red);
-        transform: rotate(0deg);
-      }
-      50% {
-        filter: drop-shadow(0 0 30px red);
-      }
-      100% {
-        filter: drop-shadow(0 0 0 red);
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Hacked By Joozx Developer</h1>
-    <p class="subtext">Semua data telah kami ambil! Jangan coba matikan perangkatmu! Joozx Hack Your Website!</p>
-    <img src="https://img1.pixhost.to/images/5378/593403852_biyuofficial.jpg" class="hack-logo" alt="Hacker Image">
-    <audio autoplay loop>
-      <source src="https://files.catbox.moe/8h5t3d.mp3" type="audio/mpeg">
-    </audio>
+  /* Skills Section */
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .skill-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  .skill-btn:hover {
+    background: #fff;
+    color: #000;
+  }
+  .skill-btn img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Audio Section */
+  .audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .play-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+  }
+  .play-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+  }
+  .play-btn:focus {
+    outline: none;
+  }
+
+  /* Blinking Text Animation */
+  .blinking-text {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    animation: blinkText 1s step-start infinite;
+  }
+  @keyframes blinkText {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Social Media Section */
+  .sosial-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .social-btn {
+    background: transparent;
+    padding: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .social-btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Icon jadi putih */
+  }
+  .social-btn:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+  }
+  .social-btn:hover img {
+    filter: none; /* icon normal lagi saat hover */
+  }
+  .social-btn:active {
+    transform: scale(0.95);
+  }
+
+/* Section Title Styling */
+/* Section Title Styling */
+.section-title {
+  text-align: left;  /* Align the title to the left */
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  width: 100%;  /* Make the underline span the full width */
+}
+
+
+/* Button Styling */
+.contact-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 8px 16px;  /* Adjusted padding for better spacing */
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Increased gap for better spacing between text and icon */
+  font-size: 16px;  /* Increased font size for readability */
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.contact-btn:active {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 40px;
+    border-top: 2px solid #fff;
+  }
+
+  /* General Button Styles */
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn:hover {
+    background: #fff;
+    color: #000;
+  }
+</style>
+
+
+<!-- Background video -->
+<video id="background-video" autoplay loop muted playsinline>
+  <source src="https://files.catbox.moe/ve0xo6.mp4" type="video/mp4">
+</video>
+
+  <header>
+<h2 class="fade-in-title">JooCloudID Marketplace</h2>
+    <img src="https://img1.pixhost.to/images/5304/592487561_joocloud.jpg" alt="Logo">
+    <p>Jasa Digital | Panel | Bot | VPS | Nomor Virtual</p>
+  </header>
+  
+    <div class="audio-container">
+  <button class="play-btn" onclick="document.getElementById('audioPlayer').play()">▶ Play</button>
+  <audio id="audioPlayer">
+    <source src="https://files.catbox.moe/gohq88.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+  <div class="blinking-text">Transaksi Selalu Aman 100%!</div>
+
+
+  <div class="section">
+  <h2>Spesifikasi Produk</h2>
+  <div class="product-list">
+    <div class="product-item" onclick="toggleSpecs('panel-pterodactyl')">✪ Panel Pterodactyl Unlimited <span>5.000</span>
+      <div class="product-specs" id="panel-pterodactyl" style="display: none;">
+        <ul>
+          <li>Ram Unlimited</li>
+          <li>Anti Delay Server</li>
+          <li>Tampilan Futuristik</li>
+          <li>Server On 24/7</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="product-item" onclick="toggleSpecs('reseller-panel')">✪ Reseller Panel <span>6.000</span>
+      <div class="product-specs" id="reseller-panel" style="display: none;">
+        <ul>
+          <li>Buat Panel Sepuasnya</li>
+          <li>Jual Panel Kualitas Tinggi</li>
+          <li>Bot Resseler On 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('admin-panel')">✪ Admin Panel <span>8.000</span>
+      <div class="product-specs" id="admin-panel" style="display: none;">
+        <ul>
+          <li>Full Akses Sistem Setting</li>
+          <li>Anti Delete Your Panel</li>
+          <li>Cocok Open Resseler</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('owner-panel')">✪ Owner Panel <span>10.000</span>
+      <div class="product-specs" id="owner-panel" style="display: none;">
+        <ul>
+          <li>Complete Ownership Features</li>
+          <li>Advanced Security Options</li>
+          <li>Manage Admin and Reseller Accounts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('partner-panel')">✪ Partner Panel <span>15.000</span>
+      <div class="product-specs" id="partner-panel" style="display: none;">
+        <ul>
+          <li>Exclusive Partnership Benefits</li>
+          <li>Revenue Sharing Options</li>
+          <li>Personalized Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('vps')">✪ VPS (R16 C4) <span>55.000</span>
+      <div class="product-specs" id="vps" style="display: none;">
+        <ul>
+          <li>16 GB RAM</li>
+          <li>4 Cores CPU</li>
+          <li>High Performance SSD Storage</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('nokos')">✪ Nomor Virtual (Nokos) <span>Custom</span>
+      <div class="product-specs" id="nokos" style="display: none;">
+        <ul>
+          <li>Customizable Number</li>
+          <li>Perfect for Verification</li>
+          <li>Multiple Providers Supported</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-script-bot')">✪ Jasa Pembuatan Script Bot <span>Custom</span>
+      <div class="product-specs" id="jasa-script-bot" style="display: none;">
+        <ul>
+          <li>Custom Bot Script</li>
+          <li>Full Integration with WhatsApp</li>
+          <li>Automation & Custom Features</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-fix-script')">✪ Jasa Fix Script <span>Custom</span>
+      <div class="product-specs" id="jasa-fix-script" style="display: none;">
+        <ul>
+          <li>Debugging and Bug Fixing</li>
+          <li>Performance Optimization</li>
+          <li>Custom Solution for Your Script</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('selling-script-joo')">✪ Selling Script JooCloudID V5 <span>20.000</span>
+      <div class="product-specs" id="selling-script-joo" style="display: none;">
+        <ul>
+          <li>Script Bot Whatsapp</li>
+          <li>Auto Reply</li>
+          <li>Support All Panel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-install-panel')">✪ Jasa Install Panel <span>8.000</span>
+      <div class="product-specs" id="jasa-install-panel" style="display: none;">
+        <ul>
+          <li>Full Setup & Installation</li>
+          <li>Easy Configuration</li>
+          <li>Comprehensive Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-install-thema')">✪ Jasa Install Thema <span>3.000</span>
+      <div class="product-specs" id="jasa-install-thema" style="display: none;">
+        <ul>
+          <li>Custom Themes for Panels</li>
+          <li>Beautiful and User-Friendly Designs</li>
+          <li>Easy to Customize</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-hackback')">✪ Jasa Hackback Panel <span>5.000</span>
+      <div class="product-specs" id="jasa-hackback" style="display: none;">
+        <ul>
+          <li>Security Panel Recovery</li>
+          <li>Hackback Strategies</li>
+          <li>Full Protection Services</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-item" onclick="toggleSpecs('jasa-ubah-pw-vps')">✪ Jasa Ubah PW VPS <span>1.000</span>
+      <div class="product-specs" id="jasa-ubah-pw-vps" style="display: none;">
+        <ul>
+          <li>Password Recovery for VPS</li>
+          <li>Secure and Confidential</li>
+          <li>Fast Process</li>
+        </ul>
+      </div>
+    </div>
   </div>
+</div>
+
+<script>
+  function toggleSpecs(productId) {
+    const specs = document.getElementById(productId);
+    const isVisible = specs.style.display === 'block';
+
+    // Toggle the visibility of the specs
+    specs.style.display = isVisible ? 'none' : 'block';
+  }
+</script>
+
+
+
+    <div class="payment-section">
+      <h2>Metode Pembayaran</h2>
+      <img src="https://img1.pixhost.to/images/5304/592488198_joocloud.jpg" alt="QRIS">
+      <div>
+        <button class="payment-btn" onclick="copyText('083822438936')">Dana</button>
+        <button class="payment-btn" onclick="copyText('6283196543913')">GoPay</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>
+        Saya seorang developer berpengalaman dalam pembuatan script bot WhatsApp seperti <b>JooCloudID</b>, <b>FragmentXI</b>, dan <b>Jooxbotz</b>.  
+        Saya juga menjual berbagai kebutuhan hosting, panel, VPS, dan layanan digital lainnya.
+      </p>
+
+      <div class="skills">
+        <a class="skill-btn" href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML Logo"> HTML
+        </a>
+        <a class="skill-btn" href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS Logo"> CSS
+        </a>
+        <a class="skill-btn" href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JS Logo"> JavaScript
+        </a>
+        <a class="skill-btn" href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/2211/2211424.png" alt="Bot Logo"> Bot Developer
+        </a>
+        <a class="skill-btn" href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png" alt="Hosting Logo"> Hosting Seller
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+  <h2>Sosial Media</h2>
+  <div class="skills">
+    <a class="skill-btn" href="https://www.tiktok.com/@j.oxyy?_t=ZS-8vs3jDX4f9p&_r=1" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"> TikTok
+    </a>
+    <a class="skill-btn" href="https://github.com/Joodev65" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"> GitHub
+    </a>
+    <a class="skill-btn" href="https://instagram.com/joocloudid" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Instagram
+    </a>
+  </div>
+</div>
+
+<div class="contact">
+  <h2 class="section-title">Contact Person</h2>
+  <a href="https://wa.me/6283196543913" target="_blank" class="contact-btn">WhatsApp</a>
+  <a href="https://whatsapp.com/channel/0029VbA8EL0DjiOguK9AA30X" target="_blank" class="contact-btn">Testimoni</a>
+  <a href="https://whatsapp.com/channel/0029Vb5dKXYFSAt6LMj6CR1V" target="_blank" class="contact-btn">Info & Update</a>
+  <a href="https://chat.whatsapp.com/D8snaCAdqnnEc9UKPNVGFT" target="_blank" class="contact-btn">Marketplace</a>
+</div>
+
+
+  <footer>
+    &copy; 2025 JooCloudID. All Rights Reserved.
+  </footer>
 
   <script>
-    // Simulasi delay saat buka halaman
-    document.body.style.filter = "blur(10px)";
-    setTimeout(() => {
-      document.body.style.filter = "none";
-    }, 5000); // blur hilang setelah 5 detik
-
-    // Glitch efek berkala
-    setInterval(() => {
-      document.body.style.backgroundColor = "#111";
-      setTimeout(() => {
-        document.body.style.backgroundColor = "black";
-      }, 100);
-    }, 700);
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Nomor ${text} telah disalin!`);
+      });
+    }
   </script>
+
 </body>
 </html>
