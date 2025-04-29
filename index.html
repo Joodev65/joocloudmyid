@@ -7,7 +7,7 @@
     body {
       background: black;
       color: red;
-      font-family: monospace;
+      font-family: 'Courier New', Courier, monospace;
       text-align: center;
       margin: 0;
       padding: 0;
@@ -19,6 +19,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: fadeIn 5s forwards;
     }
 
     h1 {
@@ -32,6 +34,21 @@
       color: white;
       animation: glow 2s ease-in-out infinite alternate;
       margin-top: 20px;
+    }
+
+    img.hack-logo {
+      width: 250px;
+      margin-top: 30px;
+      animation: rotateGlow 6s linear infinite;
+      border-radius: 10px;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     @keyframes flicker {
@@ -49,12 +66,6 @@
       }
     }
 
-    img.hack-logo {
-      width: 200px;
-      margin-top: 30px;
-      animation: rotateGlow 4s linear infinite;
-    }
-
     @keyframes rotateGlow {
       0% {
         filter: drop-shadow(0 0 0 red);
@@ -68,20 +79,32 @@
         transform: rotate(360deg);
       }
     }
-
-    audio {
-      display: none;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>HACKED BY Joozx Developer</h1>
-    <p class="subtext">Semua data telah kami ambil! Jangan coba matikan perangkatmu!</p>
-    <img src="https://img1.pixhost.to/images/5378/593403852_biyuofficial.jpg" class="hack-logo" alt="Hacker Logo">
+    <h1>Hacked By Joozx Developer</h1>
+    <p class="subtext">Semua data telah kami ambil! Jangan coba matikan perangkatmu! Joozx Hack Your Website!</p>
+    <img src="https://img1.pixhost.to/images/5378/593403852_biyuofficial.jpg" class="hack-logo" alt="Hacker Image">
     <audio autoplay loop>
-      <source src="https://files.catbox.moe/5r2k4r.mp3" type="audio/mpeg">
+      <source src="https://files.catbox.moe/8h5t3d.mp3" type="audio/mpeg">
     </audio>
   </div>
+
+  <script>
+    // Simulasi delay saat buka halaman
+    document.body.style.filter = "blur(10px)";
+    setTimeout(() => {
+      document.body.style.filter = "none";
+    }, 5000); // blur hilang setelah 5 detik
+
+    // Glitch efek berkala
+    setInterval(() => {
+      document.body.style.backgroundColor = "#111";
+      setTimeout(() => {
+        document.body.style.backgroundColor = "black";
+      }, 100);
+    }, 700);
+  </script>
 </body>
 </html>
