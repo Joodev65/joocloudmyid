@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #ffffff;
+      --accent-color: #00fff7;
+      --secondary-color: #191919;
+    }
+    [data-theme="light"] {
+      --bg-color: #ffffff;
+      --text-color: #0f0f0f;
+      --accent-color: #0066ff;
+      --secondary-color: #f4f4f4;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--accent-color);
+    }
+
+    .title {
+      font-size: 1.5em;
+      color: var(--accent-color);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-switch {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .theme-switch img {
+      width: 24px;
+    }
+
+   .menu-toggle {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 4px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  right: -250px;
+  width: 200px;
+  background: var(--secondary-color);
+  padding: 15px;
+  border-left: 2px solid var(--accent-color);
+  transition: right 0.3s ease;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+    .about-section {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .about-card,
+    .ebook-section {
+      background: var(--secondary-color);
+      border-left: 5px solid var(--accent-color);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 30px auto;
+      box-sizing: border-box;
+    }
+
+    .about-card h2 {
+      color: var(--accent-color);
+    }
+
+    .location {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .location img {
+      width: 20px;
+    }
+
+    .ebook-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ebook-info h3 {
+      margin: 0;
+      color: var(--accent-color);
+    }
+
+    .ebook-info button {
+      background: var(--accent-color);
+      border: none;
+      color: var(--bg-color);
+      padding: 8px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      align-self: flex-start;
+    }
+
+    .skills {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .skill-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skill-item {
+      background: var(--secondary-color);
+      border: 1.5px solid var(--accent-color);
+      border-radius: 10px;
+      padding: 6px;
+      width: 72px;
+      height: 72px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease;
+    }
+
+    .skill-item:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+    }
+
+    .skill-item img {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 4px;
+    }
+
+    .skill-item span {
+      font-size: 0.65em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">About Me</div>
+    <div class="controls">
+      <button class="theme-switch" onclick="toggleTheme()">
+        <img id="theme-icon" src="https://cdn-icons-png.flaticon.com/512/1164/1164954.png" alt="Theme" />
+      </button>
+      <div class="menu-toggle" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="ai.html">Tanya Indah</a>
+    <a href="index.html">Home</a>
+    <a href="payment.html">Payment</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Me</a>
+  </div>
+  
+  </header>
+
+  <div class="about-section">
+    <div class="about-card">
+      <h2>Halo, aku Joocodee!</h2>
+      <p>Aku adalah penjual digital online yang menyediakan kebutuhan bot, jasa pemrograman, dan produk digital lainnya. Aku juga seorang developer bot WhatsApp dengan pengalaman di berbagai bahasa seperti JavaScript, HTML, CSS, dan Python. Aku paham logika pemrograman dan siap bantu kamu buat solusi digital!</p>
+
+      <div class="skills">
+        <h3>Bahasa Pemrograman yang Dikuasai:</h3>
+        <div class="skill-grid">
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML">
+            <span>HTML</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="CSS">
+            <span>CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="location">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location"/>
+        <span>Medan, Sumatera Utara - 13 Tahun</span>
+      </div>
+    </div>
+
+    <div class="ebook-section">
+      <div class="ebook-info">
+        <h3>E-Book JavaScript Bot WhatsApp</h3>
+        <p>Belajar bikin bot WhatsApp dengan JavaScript. Cocok buat pemula!</p>
+        <p><strong>Harga: Rp10.000</strong></p>
+        <button onclick="window.open('https://wa.me/6281362675697?text=Halo%20bang%2C%20saya%20mau%20beli%20E-Book%20JavaScript%20Bot%20WhatsApp', '_blank')">Beli via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById("theme-icon");
+      const isLight = body.getAttribute("data-theme") === "light";
+      body.setAttribute("data-theme", isLight ? null : "light");
+      icon.src = isLight ?
+        "https://cdn-icons-png.flaticon.com/512/1164/1164954.png" :
+        "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+    }function orderWhatsApp(item) {
+  const url = `https://wa.me/6281362675697?text=Halo%20saya%20ingin%20order%20${encodeURIComponent(item)}`;
+  window.open(url, '_blank');
+}
+
+function toggleMenu() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open');
+}
+  </script>
+</body>
+</html>
