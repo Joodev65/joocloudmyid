@@ -49,10 +49,20 @@
       width: 24px;
     }
     .menu-toggle {
-      font-size: 24px;
-      color: var(--accent-color);
-      cursor: pointer;
-    }
+  width: 22px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
     .sidebar {
       position: fixed;
       top: 60px;
@@ -116,7 +126,11 @@
       <button class="theme-switch" onclick="toggleTheme()">
         <img id="theme-icon" src="https://cdn-icons-png.flaticon.com/512/1164/1164954.png" alt="Theme" />
       </button>
-      <div class="menu-toggle" onclick="toggleMenu()">&#8942;</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+      </div>
     </div>
   </header>
   <div class="sidebar" id="sidebar">
