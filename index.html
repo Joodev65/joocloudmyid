@@ -56,8 +56,8 @@ header {
 }
 
 .menu-toggle {
-  width: 22px;
-  height: 18px;
+  width: 30px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -65,7 +65,7 @@ header {
 }
 
 .menu-toggle span {
-  height: 3px;
+  height: 4px;
   width: 100%;
   background-color: var(--accent-color);
   border-radius: 2px;
@@ -184,6 +184,17 @@ header {
   animation: fall linear infinite;
 }
 
+.donate-play-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.donate-play-wrapper .donate-btn {
+  margin: 0;
+}
+
 @keyframes fall {
   0% {
     transform: translateY(-10px);
@@ -260,14 +271,14 @@ header {
   <span></span>
   <span></span>
   <span></span>
-      </div>
+</div>
     </div>
   </header>  <div class="sidebar" id="sidebar">
   <a href="ai.html">Tanya Indah</a>
   <a href="index.html">Home</a>
   <a href="payment.html">Payment</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About Me</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Me</a>
 </div>
   </div> <div class="profile-section">
     <div class="profile-section">
@@ -310,53 +321,56 @@ header {
     </div>
   </div>
 
-  <button class="donate-btn" onclick="window.open('https://saweria.co/JoozxDev', '_blank')">Donate Me</button> 
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const icon = document.getElementById("theme-icon");
-      const current = body.getAttribute("data-theme");
-      if (current === "light") {
-        body.removeAttribute("data-theme");
-        icon.src = "https://cdn-icons-png.flaticon.com/512/1164/1164954.png";
-      } else {
-        body.setAttribute("data-theme", "light");
-        icon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
-      }
+<div class="donate-play-wrapper">
+  <button class="donate-btn" onclick="window.open('https://saweria.co/JoozxDev', '_blank')">Donate Me</button>
+  <button class="donate-btn" onclick="document.getElementById('audioPlayer').play()">Play</button>
+</div>
+<audio id="audioPlayer" src="https://files.catbox.moe/kydixv.mp3"></audio>
+
+    <script>
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const current = body.getAttribute("data-theme");
+    if (current === "light") {
+      body.removeAttribute("data-theme");
+      icon.src = "https://cdn-icons-png.flaticon.com/512/1164/1164954.png";
+    } else {
+      body.setAttribute("data-theme", "light");
+      icon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
     }
+  }
 
-    function toggleMenu() {
-      document.getElementById("sidebar").classList.toggle("open");
+  function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("open");
+  }
+
+  const countdownEl = document.getElementById("countdown");
+  const saleEnd = new Date();
+  saleEnd.setHours(saleEnd.getHours() + 6);
+
+  setInterval(() => {
+    const now = new Date();
+    const diff = saleEnd - now;
+    if (diff < 0) {
+      countdownEl.innerText = "Flash Sale Berakhir!";
+      return;
     }
+    const hrs = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+    const min = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const sec = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+    countdownEl.innerText = `${hrs} : ${min} : ${sec}`;
+  }, 1000);
 
-    // Countdown Timer
-    const countdownEl = document.getElementById("countdown");
-    const saleEnd = new Date();
-    saleEnd.setHours(saleEnd.getHours() + 6);
-
-    setInterval(() => {
-      const now = new Date();
-      const diff = saleEnd - now;
-      if (diff < 0) {
-        countdownEl.innerText = "Flash Sale Berakhir!";
-        return;
-      }
-      const hrs = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
-      const min = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-      const sec = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-      countdownEl.innerText = `${hrs} : ${min} : ${sec}`;
-    }, 1000);
-
-    // Particle effect
-    const particleContainer = document.querySelector('.particles');
-    for (let i = 0; i < 80; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('particle');
-      dot.style.left = Math.random() * 100 + 'vw';
-      dot.style.top = -Math.random() * 100 + 'px';
-      dot.style.animationDuration = (2 + Math.random() * 4) + 's';
-      dot.style.animationDelay = (Math.random() * 5) + 's';
-      particleContainer.appendChild(dot);
-    }
-  </script></body>
+  const particleContainer = document.querySelector('.particles');
+  for (let i = 0; i < 80; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('particle');
+    dot.style.left = Math.random() * 100 + 'vw';
+    dot.style.top = -Math.random() * 100 + 'px';
+    dot.style.animationDuration = (2 + Math.random() * 4) + 's';
+    dot.style.animationDelay = (Math.random() * 5) + 's';
+    particleContainer.appendChild(dot);
+  }
+</script></body>
 </html>
