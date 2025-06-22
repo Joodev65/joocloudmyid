@@ -104,6 +104,7 @@
 
     input[type="text"]:focus {
       box-shadow: 0 0 10px var(--main-pink), inset 0 0 5px var(--main-pink);
+      background: rgba(255, 0, 90, 0.05);
     }
 
     button {
@@ -124,6 +125,12 @@
       box-shadow: 0 6px 20px rgba(255,0,90,0.4);
     }
 
+    button:disabled {
+      background: gray;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
     .footer {
       margin-top: 25px;
       font-size: 12px;
@@ -139,15 +146,33 @@
       <h1>JooCode Official</h1>
     </div>
 
-    <form action="https://formspree.io/f/mnnvganr" method="POST">
-      <input type="text" name="id_channel" placeholder="Masukkan ID Channel" required>
-      <button type="submit">Submit</button>
+    <form id="form" action="https://formspree.io/f/mnnvganr" method="POST">
+      <input type="text" name="id_channel" id="id_channel" placeholder="Masukkan ID Channel" required>
+      <button type="submit" id="submitBtn">Submit</button>
     </form>
 
     <div class="footer">
-      © 2025 - Created By Joocode Offocial
+      © 2025 - Created By Joocode Official
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById('form');
+    const input = document.getElementById('id_channel');
+    const button = document.getElementById('submitBtn');
+
+    const sudahSubmit = localStorage.getItem('joocode_submitted');
+
+    if (sudahSubmit) {
+      input.disabled = true;
+      button.disabled = true;
+      button.innerText = "Sudah Submit";
+    }
+
+    form.addEventListener('submit', function() {
+      localStorage.setItem('joocode_submitted', 'true');
+    });
+  </script>
 
 </body>
 </html>
