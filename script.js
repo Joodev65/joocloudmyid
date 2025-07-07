@@ -187,17 +187,23 @@ function showPaymentDetails(method) {
     // Set payment method details with new format
     switch(method) {
         case 'qris':
-            methodTitle.textContent = 'QRIS Payment';
-            paymentIconDisplay.innerHTML = '<i class="fas fa-qrcode"></i>';
-            paymentIconDisplay.className = 'payment-icon-large qris-icon';
-            methodDetails.innerHTML = `
-                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 12px; margin-bottom: 15px;">
-                    <div style="font-size: 1rem; color: #666; margin-bottom: 10px;">QR Code Payment</div>
-                    <div style="font-weight: 600; color: #2c3e50;">QR Code akan dikirim via WhatsApp</div>
-                    <div style="font-size: 0.9rem; color: #888; margin-top: 8px;">Klik tombol di bawah untuk mendapatkan QR Code</div>
-                </div>
-            `;
-            break;
+    methodTitle.textContent = 'QRIS';
+    paymentIconDisplay.innerHTML = '<i class="fas fa-qrcode"></i>';
+    paymentIconDisplay.className = 'payment-icon-large qris-icon';
+    methodDetails.innerHTML = `
+        <div style="text-align: center; padding: 20px; background: #fff; border-radius: 12px;">
+            <div style="font-size: 1rem; color: #555; margin-bottom: 12px;">Scan QR Code dengan aplikasi e-wallet</div>
+            <img src="https://files.catbox.moe/3kchau.jpg" alt="QRIS Payment" style="max-width: 250px; border-radius: 12px; margin-bottom: 15px;">
+            <div style="font-size: 0.9rem; color: #888; margin-bottom: 10px;">No. BRN (jika diminta): <strong id="brnCode">123456677</strong></div>
+            <button onclick="copyBRN()" style="padding: 8px 16px; background-color: #108ee9; color: white; border: none; border-radius: 6px; font-size: 0.9rem; cursor: pointer;">
+                Salin BRN
+            </button>
+            <div style="margin-top: 15px; font-size: 0.9rem; color: #555;">
+                Amount: <span style="font-weight: 700; color: #108ee9;">${currentOrder.price}</span>
+            </div>
+        </div>
+    `;
+    break;
             
         case 'dana':
             methodTitle.textContent = 'DANA';
@@ -234,21 +240,21 @@ function showPaymentDetails(method) {
             break;
             
         case 'bri':
-            methodTitle.textContent = 'BRI Bank';
-            paymentIconDisplay.innerHTML = '<i class="fas fa-university"></i>';
-            paymentIconDisplay.className = 'payment-icon-large bri-icon';
-            methodDetails.innerHTML = `
-                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 12px; margin-bottom: 15px;">
-                    <div style="font-size: 1rem; color: #666; margin-bottom: 10px;">Bank Transfer</div>
-                    <div style="font-weight: 600; color: #2c3e50;">Detail rekening akan dikirim via WhatsApp</div>
-                    <div style="font-size: 0.9rem; color: #888; margin-top: 8px;">Klik tombol di bawah untuk mendapatkan nomor rekening</div>
-                    <div style="margin-top: 15px; font-size: 0.9rem; color: #666;">
-                        Amount: <span style="font-weight: 700; color: #004080;">${currentOrder.price}</span>
-                    </div>
-                </div>
-            `;
-            break;
-    }
+    methodTitle.textContent = 'BRI';
+    paymentIconDisplay.innerHTML = '<i class="fas fa-university"></i>';
+    paymentIconDisplay.className = 'payment-icon-large bri-icon';
+    methodDetails.innerHTML = `
+        <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 12px; margin-bottom: 15px;">
+            <div style="font-size: 1rem; color: #666; margin-bottom: 10px;">Bank Transfer via BRI</div>
+            <div style="font-size: 1.4rem; font-weight: 700; color: #004080; padding: 15px; background: #e9f1ff; border-radius: 12px; border: 2px dashed #004080;">
+                123456677
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                Amount: <span style="font-weight: 700; color: #004080;">${currentOrder.price}</span>
+            </div>
+        </div>
+    `;
+    break;
     
     paymentDetails.style.display = 'block';
     
