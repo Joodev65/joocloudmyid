@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joocode Official - Professional Hosting & Development Services</title>
+    <meta name="description" content="Professional hosting services, VPS solutions, and web development services from Joocode Official">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/logo.svg" alt="Joocode Official" class="logo">
+                    <span class="brand-name">Joocode Official</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Professional Hosting & Development Services</h1>
+            <p class="hero-subtitle">Premium hosting solutions and expert development services tailored for your business needs</p>
+            <a href="#services" class="cta-button">
+                <i class="fas fa-rocket"></i>
+                Explore Our Services
+            </a>
+        </div>
+        <div class="hero-background">
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Choose from our comprehensive range of hosting and development solutions</p>
+            </div>
+
+            <!-- Pterodactyl Panel -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-server"></i>
+                    Pterodactyl Panel Hosting
+                </h3>
+                <div class="products-grid">
+                    <div class="product-card" data-category="pterodactyl" data-ram="1" data-price="1000">
+                        <div class="product-header">
+                            <h4 class="product-title">1GB RAM</h4>
+                            <div class="product-price">Rp 1,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 1GB RAM</li>
+                                <li><i class="fas fa-check"></i> Full Pterodactyl Access</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                                <li><i class="fas fa-check"></i> Easy Management</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Pterodactyl Panel 1GB RAM', 'Rp 1,000', 'High-performance Pterodactyl panel hosting with 1GB RAM allocation for small to medium projects.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card" data-category="pterodactyl" data-ram="2" data-price="2000">
+                        <div class="product-header">
+                            <h4 class="product-title">2GB RAM</h4>
+                            <div class="product-price">Rp 2,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 2GB RAM</li>
+                                <li><i class="fas fa-check"></i> Full Pterodactyl Access</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Pterodactyl Panel 2GB RAM', 'Rp 2,000', 'Enhanced Pterodactyl panel hosting with 2GB RAM allocation for medium-sized applications.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card featured" data-category="pterodactyl" data-ram="4" data-price="4000">
+                        <div class="featured-badge">Popular</div>
+                        <div class="product-header">
+                            <h4 class="product-title">4GB RAM</h4>
+                            <div class="product-price">Rp 4,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 4GB RAM</li>
+                                <li><i class="fas fa-check"></i> Full Pterodactyl Access</li>
+                                <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                                <li><i class="fas fa-check"></i> Enhanced Performance</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Pterodactyl Panel 4GB RAM', 'Rp 4,000', 'Premium Pterodactyl panel hosting with 4GB RAM allocation for high-performance applications.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card" data-category="pterodactyl" data-ram="8" data-price="8000">
+                        <div class="product-header">
+                            <h4 class="product-title">8GB RAM</h4>
+                            <div class="product-price">Rp 8,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 8GB RAM</li>
+                                <li><i class="fas fa-check"></i> Full Pterodactyl Access</li>
+                                <li><i class="fas fa-check"></i> 24/7 Premium Support</li>
+                                <li><i class="fas fa-check"></i> Maximum Performance</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Pterodactyl Panel 8GB RAM', 'Rp 8,000', 'Enterprise-grade Pterodactyl panel hosting with 8GB RAM allocation for demanding applications.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPS Services -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-cloud"></i>
+                    Digital Ocean VPS
+                </h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Standard VPS</h4>
+                            <div class="product-price">Rp 45,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 8GB RAM</li>
+                                <li><i class="fas fa-check"></i> 4 CPU Cores</li>
+                                <li><i class="fas fa-check"></i> SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Full Root Access</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Digital Ocean VPS Standard', 'Rp 45,000', 'High-performance VPS with 8GB RAM and 4 CPU cores, perfect for small to medium applications.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card featured">
+                        <div class="featured-badge">Best Value</div>
+                        <div class="product-header">
+                            <h4 class="product-title">Professional VPS</h4>
+                            <div class="product-price">Rp 60,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 16GB RAM</li>
+                                <li><i class="fas fa-check"></i> 4 CPU Cores</li>
+                                <li><i class="fas fa-check"></i> Premium SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Digital Ocean VPS Professional', 'Rp 60,000', 'Enhanced VPS with 16GB RAM and 4 CPU cores, ideal for professional applications and websites.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Enterprise VPS</h4>
+                            <div class="product-price">Rp 100,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 32GB RAM</li>
+                                <li><i class="fas fa-check"></i> 8 CPU Cores</li>
+                                <li><i class="fas fa-check"></i> Enterprise SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 24/7 Premium Support</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Digital Ocean VPS Enterprise', 'Rp 100,000', 'Enterprise-grade VPS with 32GB RAM and 8 CPU cores for high-demand applications and services.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Development -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-code"></i>
+                    Website Development
+                </h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Basic Website</h4>
+                            <div class="product-price">Rp 20,000 - 50,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Static HTML/CSS</li>
+                                <li><i class="fas fa-check"></i> Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Contact Form</li>
+                                <li><i class="fas fa-check"></i> Basic SEO</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Basic Website Development', 'Rp 20,000 - 50,000', 'Professional static website with responsive design, perfect for personal portfolios and small businesses.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card featured">
+                        <div class="featured-badge">Popular</div>
+                        <div class="product-header">
+                            <h4 class="product-title">Professional Website</h4>
+                            <div class="product-price">Rp 100,000 - 200,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Dynamic Functionality</li>
+                                <li><i class="fas fa-check"></i> CMS Integration</li>
+                                <li><i class="fas fa-check"></i> E-commerce Features</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Professional Website Development', 'Rp 100,000 - 200,000', 'Full-featured dynamic website with CMS, e-commerce capabilities, and advanced functionality.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Enterprise Website</h4>
+                            <div class="product-price">Rp 200,000 - 300,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Custom Development</li>
+                                <li><i class="fas fa-check"></i> API Integrations</li>
+                                <li><i class="fas fa-check"></i> Advanced Security</li>
+                                <li><i class="fas fa-check"></i> Performance Optimization</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Enterprise Website Development', 'Rp 200,000 - 300,000', 'Custom enterprise-grade website with advanced features, API integrations, and premium performance.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Script Services -->
+            <div class="service-category">
+                <h3 class="category-title">
+                    <i class="fas fa-terminal"></i>
+                    Script Development & Fixes
+                </h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Basic Script</h4>
+                            <div class="product-price">Rp 5,000 - 25,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Simple Scripts</li>
+                                <li><i class="fas fa-check"></i> Bug Fixes</li>
+                                <li><i class="fas fa-check"></i> Code Optimization</li>
+                                <li><i class="fas fa-check"></i> Documentation</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Basic Script Development', 'Rp 5,000 - 25,000', 'Simple script development, bug fixes, and code optimization for basic automation needs.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Advanced Script</h4>
+                            <div class="product-price">Rp 25,000 - 75,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Complex Scripts</li>
+                                <li><i class="fas fa-check"></i> Feature Addition</li>
+                                <li><i class="fas fa-check"></i> API Integration</li>
+                                <li><i class="fas fa-check"></i> Testing & Debug</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Advanced Script Development', 'Rp 25,000 - 75,000', 'Complex script development with feature additions, API integrations, and comprehensive testing.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h4 class="product-title">Custom Solution</h4>
+                            <div class="product-price">Rp 75,000 - 100,000</div>
+                        </div>
+                        <div class="product-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Custom Development</li>
+                                <li><i class="fas fa-check"></i> Full Application</li>
+                                <li><i class="fas fa-check"></i> Database Integration</li>
+                                <li><i class="fas fa-check"></i> Ongoing Support</li>
+                            </ul>
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('Custom Script Solution', 'Rp 75,000 - 100,000', 'Complete custom script solutions with database integration and full application development.')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Order Product</h2>
+                <div id="modalPrice" class="modal-price"></div>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+                <div class="order-form">
+                    <div class="form-group">
+                        <label for="buyerNotes">Order Notes (Optional)</label>
+                        <textarea id="buyerNotes" placeholder="Any special requirements or notes for your order..."></textarea>
+                    </div>
+                    <button class="continue-btn" onclick="showPaymentOptions()">
+                        <i class="fas fa-arrow-right"></i>
+                        Continue to Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content payment-modal">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Payment</h2>
+                <p class="payment-subtitle">Choose your preferred payment method</p>
+            </div>
+            <div class="modal-body">
+                <!-- Order Summary Card -->
+                <div class="order-summary-card">
+                    <div id="orderSummary"></div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods-grid">
+                        <button class="payment-method-card" onclick="selectPayment('qris')">
+                            <div class="payment-icon qris-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <span>QRIS</span>
+                        </button>
+                        <button class="payment-method-card" onclick="selectPayment('dana')">
+                            <div class="payment-icon dana-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <span>DANA</span>
+                        </button>
+                        <button class="payment-method-card" onclick="selectPayment('gopay')">
+                            <div class="payment-icon gopay-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <span>GoPay</span>
+                        </button>
+                        <button class="payment-method-card" onclick="selectPayment('bri')">
+                            <div class="payment-icon bri-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <span>BRI</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Payment Details -->
+                <div id="paymentDetails" class="payment-details-new" style="display: none;">
+                    <div class="payment-info-card">
+                        <div class="payment-header">
+                            <div id="paymentIconDisplay" class="payment-icon-large"></div>
+                            <h3 id="paymentMethodTitle"></h3>
+                        </div>
+                        <div id="paymentMethodDetails" class="payment-content"></div>
+                        
+                        <!-- Warning Notice -->
+                        <div class="payment-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Transfer the exact amount. Keep your receipt!</span>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="confirm-payment-btn" onclick="confirmTransfer()">
+                            <i class="fas fa-whatsapp"></i>
+                            Complete Payment via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Joocode Official</h3>
+                    <p>Professional hosting and development services for your business needs.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Pterodactyl Hosting</a></li>
+                        <li><a href="#services">VPS Solutions</a></li>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Script Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#" onclick="openWhatsApp()">WhatsApp Support</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> +62 831-4096-2760</li>
+                        <li><i class="fas fa-envelope"></i> support@joocode.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Joocode Official. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
